@@ -6,7 +6,7 @@ html { font-family: 'Karla', sans-serif; /* 1 */ line-height: 1.15; /* 2 */ -ms-
 
 /* Sections ========================================================================== */
 /** Remove the margin in all browsers (opinionated). */
-body { margin: 0; height: 100vh; width: 100vw; overflow: hidden; }
+body { margin: 0; height: 100vh; width: 100vw; overflow-x: hidden; }
 
 /** Add the correct display in IE 9-. */
 article, aside, footer, header, nav, section { display: block; }
@@ -180,6 +180,24 @@ template { display: none; }
 .brit__three { z-index: 1; -webkit-transform: translate(-50px, 50px); -ms-transform: translate(-50px, 50px); transform: translate(-50px, 50px); }
 
 .brit__three__img { background: url("../images/brit-logo.jpg"); width: 89%; height: 89%; background-size: cover; background-repeat: no-repeat; background-position: -21px -5px; -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
+
+.section-two { margin-top: 100px; width: 100%; margin-bottom: 100px; }
+
+.section-two-content__heading { text-align: center; color: #252c3f; margin: 0 0 85px 0; }
+
+.section-two-content__heading__span { color: #f13f4b; }
+
+.section-two-content__categories { max-width: 90vw; margin: 0 auto; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+
+.card { width: 270px; height: 270px; background: white; color: #b0b0b0; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; overflow: hidden; }
+
+.card__text { padding: 30px 10px 0 10px; margin-bottom: 25px; }
+
+.card__heading { text-transform: uppercase; font-weight: 700; color: #252c3f; margin-bottom: 15px; }
+
+.card__image { width: 100%; height: 100%; }
+
+.card__image--one { background-image: url("../images/maritime.png"); background-size: contain; }
 
 body { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
