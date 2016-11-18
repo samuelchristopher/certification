@@ -215,6 +215,18 @@ template { display: none; }
 
 .button-wrap-center { display: -webkit-flex; display: -ms-flexbox; display: flex; width: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
+.section-three { margin-top: 80px; width: 100vw; background: #f4f5f9; padding-top: 11px; }
+
+.section-three__heading { color: #252c3f; text-align: center; }
+
+.section-three__content-wrapper { display: block; margin: 0 auto; max-width: 80vw; }
+
+.section-three-content { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.section-three-content__image { width: 630px; height: 430px; background-image: url("../images/sou-quality-manual.png"); background-size: contain; background-repeat: no-repeat; background-position: center center; }
+
+.section-three-content__desc { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; color: #f13f4b; font-weight: 700; text-align: center; margin: 0 auto; }
+
 body { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
 .container { width: 104vw; }

@@ -1,0 +1,36 @@
+.section-three
+  margin-top: 80px
+  width: 100vw
+  background: $light-grey
+  padding-top: 11px
+
+  +e('heading')
+    color: $black
+    text-align: center
+
+  +e('content-wrapper')
+    display: block
+    margin: 0 auto
+    max-width: 80vw
+
+.section-three-content
+  display: flex
+  flex-wrap: wrap
+
+  +e('image')
+    width: 630px
+    height: 430px
+    background:
+      image: url('../images/sou-quality-manual.png')
+      size: contain
+      repeat: no-repeat
+      position: center center
+
+  +e('desc')
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $light-red
+    font-weight: 700
+    text-align: center
+    margin: 0 auto
