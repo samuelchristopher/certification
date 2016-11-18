@@ -249,6 +249,9 @@ body { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justi
   .brit__two { display: none; }
   .brit__three { display: none; } }
 
+@media (max-width: 856px) { .section-three-content__image { width: 530px; height: 250px; }
+  .section-three-content__desc { font-size: .7em; } }
+
 .button { text-transform: uppercase; font-weight: 700; padding: 5px 15px; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; background: white; font-size: 1.5em; cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
