@@ -1,0 +1,125 @@
+.section-four
+  position: relative
+  z-index: 3
+  width: 100vw
+  +e('bg')
+    border-radius: 70%
+    width: 200vw
+    // width: 150vw
+    margin-left: -50vw
+    margin-top: 25px
+    background: white
+    height: 100%
+    position: absolute
+    z-index: -1
+    top: -75px
+    // left: 27vw
+  +e('heading')
+    color: $light-red
+    text-align: center
+    margin-top: 0
+
+.section-four-content
+  +e('main-wrapper')
+    display: block
+    margin: 0 auto
+    max-width: 80vw
+
+  +e('main')
+    display: flex
+    align-items: center
+
+  +e('preview')
+    width: 370px
+    height: 510px
+    border-radius: 10px
+    box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15)
+    overflow: hidden
+    position: relative
+
+  +e('desc')
+    width: 60%
+
+.section-four-content-desc
+  +e('text')
+    color: $black
+
+  +e('open-button')
+    @extend .button
+    @extend .section-one-content__sign-up-button
+    @extend .section-two-content__view-more-button
+    // margin-top: 70px
+
+.section-four-content-preview
+  // position: relative
+  +e('bg')
+    position: relative
+    width: 100%
+    height: 100%
+    +e('overlay')
+      width: 100%
+      height: 100%
+      background-color: $light-red
+      border-radius: 10px
+    +e('circle')
+      height: 160px
+      width: 160px
+      border-radius: 60%
+      background-color: white
+      position: absolute
+      z-index: 2
+      right: -60px
+      bottom: -70px
+
+  +e('area')
+    border-radius: 10px
+    box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15)
+    height: 475px
+    width: 340px
+    z-index: 3
+    display: flex
+    position: absolute
+    top: 20px
+    left: 15px
+    overflow: hidden
+
+    +e('img')
+      width: 100%
+      height: 100%
+      border-radius: 10px
+      background:
+        image: url('../images/doc.png')
+        size: cover
+        repeat: no-repeat
+    +e('circle')
+      width: 150px
+      height: 150px
+      background: $light-red
+      color: white
+      border-radius: 60%
+      position: absolute
+      z-index: 4
+      bottom: -50px
+      right: -45px
+      will-change: transform
+      transition: transform 200ms ease-in-out
+      transform-origin: top-left
+
+      +m('click-target')
+        height: 67%
+        width: 70%
+        cursor: pointer
+          &:hover
+            background: white
+              .section-four-content-preview__area__circle
+                transform: scale(1.6)
+
+
+i.ion-android-open
+  color: white
+  position: absolute
+  z-index: 5
+  bottom: 60px
+  font-size: 55px
+  right: 70px
+  pointer-events: none
