@@ -299,7 +299,7 @@ body { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justi
   .section-two-content__heading { max-width: 94vw; margin-left: auto; margin-right: auto; margin-bottom: 35px; } }
 
 @media (max-width: 856px) { .section-three-content__image { width: 530px; height: 250px; }
-  .section-three-content__desc { font-size: .7em; } }
+  .section-three-content__desc { font-size: .7em; width: 100%; } }
 
 .button, .section-four-content-desc__open-button { text-transform: uppercase; font-weight: 700; padding: 5px 15px; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; background: white; font-size: 1.5em; cursor: pointer; }
 
