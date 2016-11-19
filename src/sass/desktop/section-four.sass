@@ -9,7 +9,7 @@
     margin-left: -50vw
     margin-top: 25px
     background: white
-    height: 100%
+    height: 128%
     position: absolute
     z-index: -1
     top: -75px
@@ -20,18 +20,22 @@
     margin-top: 0
 
 .section-four-content
+  max-width: 60vw
+  margin: 0 auto
+  position: relative
   +e('main-wrapper')
-    display: block
-    margin: 0 auto
-    max-width: 80vw
+    display: flex
+    justify-content: space-between
 
   +e('main')
     display: flex
     align-items: center
+    justify-content: space-around
+    width: 100%
 
   +e('preview')
-    width: 370px
-    height: 510px
+    width: 350px
+    height: 470px
     border-radius: 10px
     box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15)
     overflow: hidden
@@ -39,6 +43,43 @@
 
   +e('desc')
     width: 60%
+
+  +e('forward-arrow')
+    position: absolute
+    top: 0
+    height: 100%
+    width: 4%
+    right: -20%
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 30px
+    color: $black
+    cursor: pointer
+
+  +e('indicator')
+    display: flex
+    height: 30px
+    margin: 20px 0
+    background: white
+    position: absolute
+    left: -40vw
+    right: -40vw
+    align-items: center
+    justify-content: center
+
+    +e('active')
+      background-color: $black
+      height: 20px
+      width: 20px
+      border-radius: 60%
+
+    +e('inactive')
+      height: 20px
+      width: 20px
+      border-radius: 60%
+      background-color: $dark-grey
+      margin-left: 20px
 
 .section-four-content-desc
   +e('text')
@@ -62,25 +103,25 @@
       background-color: $light-red
       border-radius: 10px
     +e('circle')
-      height: 160px
-      width: 160px
+      height: 180px
+      width: 180px
       border-radius: 60%
       background-color: white
       position: absolute
       z-index: 2
-      right: -60px
-      bottom: -70px
+      right: -40px
+      bottom: -50px
 
   +e('area')
     border-radius: 10px
     box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15)
-    height: 475px
-    width: 340px
+    height: 435px
+    width: 91%
     z-index: 3
     display: flex
     position: absolute
     top: 20px
-    left: 15px
+    left: 16.5px
     overflow: hidden
 
     +e('img')
@@ -102,17 +143,21 @@
       bottom: -50px
       right: -45px
       will-change: transform
-      transition: transform 200ms ease-in-out
-      transform-origin: top-left
+      transition: all 200ms ease-in-out
+      transform-origin: bottom right
 
       +m('click-target')
         height: 67%
         width: 70%
         cursor: pointer
+        position: absolute
+        bottom: 0
+        right: 0
         &:hover
-          // background: white
-          // .section-four-content-preview__area__circle
-          //   transform: scale(1.6)
+          .section-four-content-preview__area__circle
+            // background: $dark-red
+            transform: scale(1.5) translate(20px, 10px)
+
 
 
 i.ion-android-open
