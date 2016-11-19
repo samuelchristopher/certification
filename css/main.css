@@ -257,10 +257,6 @@ template { display: none; }
 
 .section-four-content-preview__area__circle--click-target { height: 67%; width: 70%; cursor: pointer; }
 
-.section-four-content-preview__area__circle--click-target:hover { background: white; }
-
-.section-four-content-preview__area__circle--click-target:hover .section-four-content-preview__area__circle { -webkit-transform: scale(1.6); -ms-transform: scale(1.6); transform: scale(1.6); }
-
 i.ion-android-open { color: white; position: absolute; z-index: 5; bottom: 60px; font-size: 55px; right: 70px; pointer-events: none; }
 
 body { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
