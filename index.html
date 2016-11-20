@@ -1,168 +1,171 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRBS Web</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <title>crbsweb</title>
+    <meta name="description" content="crbsweb description">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+    </script>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="/src/crbsweb-app/crbsweb-app.html">
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
+      /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+      /** 1. Change the default font family in all browsers (opinionated). 2. Correct the line height in all browsers. 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
+      /* Document ========================================================================== */
+      html { font-family: 'Karla', sans-serif; /* 1 */ line-height: 1.15; /* 2 */ -ms-text-size-adjust: 100%; /* 3 */ -webkit-text-size-adjust: 100%; /* 3 */ }
+
+      html, body { max-width: 100%; overflow-x: hidden; }
+
+      /* Sections ========================================================================== */
+      /** Remove the margin in all browsers (opinionated). */
+      body { margin: 0; height: 100vh; width: 100vw; position: relative; }
+
+      /** Add the correct display in IE 9-. */
+      article, aside, footer, header, nav, section { display: block; }
+
+      /** Correct the font size and margin on `h1` elements within `section` and `article` contexts in Chrome, Firefox, and Safari. */
+      h1 { font-size: 2em; margin: 0.67em 0; }
+
+      /* Grouping content ========================================================================== */
+      /** Add the correct display in IE 9-. 1. Add the correct display in IE. */
+      figcaption, figure, main { /* 1 */ display: block; }
+
+      /** Add the correct margin in IE 8. */
+      figure { margin: 1em 40px; }
+
+      /** 1. Add the correct box sizing in Firefox. 2. Show the overflow in Edge and IE. */
+      hr { box-sizing: content-box; /* 1 */ height: 0; /* 1 */ overflow: visible; /* 2 */ }
+
+      /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */
+      pre { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
+
+      /* Text-level semantics ========================================================================== */
+      /** 1. Remove the gray background on active links in IE 10. 2. Remove gaps in links underline in iOS 8+ and Safari 8+. */
+      a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
+
+      /** Remove the outline on focused links when they are also active or hovered in all browsers (opinionated). */
+      a:active, a:hover { outline-width: 0; }
+
+      /** 1. Remove the bottom border in Firefox 39-. 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
+      abbr[title] { border-bottom: none; /* 1 */ text-decoration: underline; /* 2 */ text-decoration: underline dotted; /* 2 */ }
+
+      /** Prevent the duplicate application of `bolder` by the next rule in Safari 6. */
+      b, strong { font-weight: inherit; }
+
+      /** Add the correct font weight in Chrome, Edge, and Safari. */
+      b, strong { font-weight: bolder; }
+
+      /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */
+      code, kbd, samp { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
+
+      /** Add the correct font style in Android 4.3-. */
+      dfn { font-style: italic; }
+
+      /** Add the correct background and color in IE 9-. */
+      mark { background-color: #ff0; color: #000; }
+
+      /** Add the correct font size in all browsers. */
+      small { font-size: 80%; }
+
+      /** Prevent `sub` and `sup` elements from affecting the line height in all browsers. */
+      sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+      sub { bottom: -0.25em; }
+
+      sup { top: -0.5em; }
+
+      /* Embedded content ========================================================================== */
+      /** Add the correct display in IE 9-. */
+      audio, video { display: inline-block; }
+
+      /** Add the correct display in iOS 4-7. */
+      audio:not([controls]) { display: none; height: 0; }
+
+      /** Remove the border on images inside links in IE 10-. */
+      img { border-style: none; }
+
+      /** Hide the overflow in IE. */
+      svg:not(:root) { overflow: hidden; }
+
+      /* Forms ========================================================================== */
+      /** 1. Change the font styles in all browsers (opinionated). 2. Remove the margin in Firefox and Safari. */
+      button, input, optgroup, select, textarea { font-family: sans-serif; /* 1 */ font-size: 100%; /* 1 */ line-height: 1.15; /* 1 */ margin: 0; /* 2 */ }
+
+      /** Show the overflow in IE. 1. Show the overflow in Edge. */
+      button, input { /* 1 */ overflow: visible; }
+
+      /** Remove the inheritance of text transform in Edge, Firefox, and IE. 1. Remove the inheritance of text transform in Firefox. */
+      button, select { /* 1 */ text-transform: none; }
+
+      /** 1. Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4. 2. Correct the inability to style clickable types in iOS and Safari. */
+      button, html [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; /* 2 */ }
+
+      /** Remove the inner border and padding in Firefox. */
+      button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner { border-style: none; padding: 0; }
+
+      /** Restore the focus styles unset by the previous rule. */
+      button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
+
+      /** Change the border, margin, and padding in all browsers (opinionated). */
+      fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+
+      /** 1. Correct the text wrapping in Edge and IE. 2. Correct the color inheritance from `fieldset` elements in IE. 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers. */
+      legend { box-sizing: border-box; /* 1 */ color: inherit; /* 2 */ display: table; /* 1 */ max-width: 100%; /* 1 */ padding: 0; /* 3 */ white-space: normal; /* 1 */ }
+
+      /** 1. Add the correct display in IE 9-. 2. Add the correct vertical alignment in Chrome, Firefox, and Opera. */
+      progress { display: inline-block; /* 1 */ vertical-align: baseline; /* 2 */ }
+
+      /** Remove the default vertical scrollbar in IE. */
+      textarea { overflow: auto; }
+
+      /** 1. Add the correct box sizing in IE 10-. 2. Remove the padding in IE 10-. */
+      [type="checkbox"], [type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
+
+      /** Correct the cursor style of increment and decrement buttons in Chrome. */
+      [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button { height: auto; }
+
+      /** 1. Correct the odd appearance in Chrome and Safari. 2. Correct the outline style in Safari. */
+      [type="search"] { -webkit-appearance: textfield; /* 1 */ outline-offset: -2px; /* 2 */ }
+
+      /** Remove the inner padding and cancel buttons in Chrome and Safari on macOS. */
+      [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+      /** 1. Correct the inability to style clickable types in iOS and Safari. 2. Change font properties to `inherit` in Safari. */
+      ::-webkit-file-upload-button { -webkit-appearance: button; /* 1 */ font: inherit; /* 2 */ }
+
+      /* Interactive ========================================================================== */
+      /* Add the correct display in IE 9-. 1. Add the correct display in Edge, IE, and Firefox. */
+      details, menu { display: block; }
+
+      /* Add the correct display in all browsers. */
+      summary { display: list-item; }
+
+      /* Scripting ========================================================================== */
+      /** Add the correct display in IE 9-. */
+      canvas { display: inline-block; }
+
+      /** Add the correct display in IE. */
+      template { display: none; }
+
+      /* Hidden ========================================================================== */
+      /** Add the correct display in IE 10-. */
+      [hidden] { display: none; }
+    </style>
   </head>
   <body>
-    <div class="container">
-        <div class="section-one">
-          <div class="section-one__bg"></div>
-          <div class="nav-container">
-            <div class="nav">
-              <span class="nav__logo"></span>
-              <div class="nav__link-container link-container">
-                <a href="#" class="mobile-link-switch"><i class="ion-navicon"></i></a>
-                <a href="#" class="link-container__link">About</a>
-                <a href="#" class="link-container__link">Login</a>
-                <a href="#" class="link-container__link">Sign Up</a>
-              </div>
-            </div>
-          </div>
-          <div class="section-one__content-container section-one-content">
-            <div class="section-one-content__text">
-              <h1 class="section-one-content__heading--mobile">Get certified <br> by the certified</h1>
-              <h1 class="section-one-content__heading">Classic Reliance Bureau<br> has been certified to provide <br> certification</h1>
-              <div class="section-one-content__sub">Get certified today</div>
-              <div class="button section-one-content__sign-up-button">Sign Up</div>
-            </div>
-            <div class="section-one-content__logos logos">
-              <div class="logos__brit brit__one"><div class="brit__one__img"></div></div>
-              <div class="logos__brit brit__two"><div class="brit__two__img"></div></div>
-              <div class="logos__brit brit__three"><div class="brit__three__img"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="section-two">
-          <div class="section-two__content section-two-content">
-            <h1 class="section-two-content__heading">We are <br><span class="section-two-content__heading__span">Classic Reliance Bureau</span></h1>
-            <div class="section-two-content__wrapper">
-              <div class="section-two-content__categories categories">
-                <div class="card categories__one">
-                  <div class="card__text">
-                    <div class="card__heading">Maritime</div>
-                    <div class="card__description">We help manage risk and ensure availability of vessels and units in both the shipping and offshore sectors</div>
-                  </div>
-                  <div class="card__image card__image--one"></div>
-                </div>
-                <div class="card categories__two">
-                  <div class="card__text">
-                    <div class="card__heading">Oil and Gas</div>
-                    <div class="card__description--small--extra">We enable safe, reliable and enhanced performance by providing integrated assurance and advisory services and offshore classification</div>
-                  </div>
-                  <div class="card__image card__image--two"></div>
-                </div>
-                <div class="card categories__three">
-                  <div class="card__text">
-                    <div class="card__heading">Business Assurance</div>
-                    <div class="card__description--small">We provide certification, assessment and verification services - helping companies in a variety of industries assure sustainable business performance</div>
-                  </div>
-                  <div class="card__image card__image--three"></div>
-                </div>
-                <div class="card categories__four">
-                  <div class="card__text">
-                    <div class="card__heading">Energy</div>
-                    <div class="card__description">We support our customers across the energy value chain in ensuring reliable, efficient and sustainable energy</div>
-                  </div>
-                  <div class="card__image card__image--four"></div>
-                </div>
-              </div>
-            </div>
-            <div class="button-wrap-center">
-              <div class="button section-one-content__sign-up-button section-two-content__view-more-button">View More</div>
-            </div>
-        </div>
-      </div>
-      <div class="section-three">
-        <h1 class="section-three__heading">Quality Manual</h1>
-        <div class="section-three__content-wrapper">
-          <div class="section-three-content">
-            <div class="section-three-content__image"></div>
-            <div class="section-three-content__desc">
-              <h2>Our refined manual ensures <br> great quality for <br> our consumers</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section-four">
-        <div class="section-four__bg"></div>
-        <h1 class="section-four__heading">Take a look</h1>
-        <div class="section-four-content">
-          <div class="section-four-content__main-wrapper">
-            <div class="section-four-content__main">
-              <div class="section-four-content__desc">
-                <h2 class="section-four-content-desc__text">
-                  This is an example of the comprehnsive and extensive documentation <br> we provide here in <br> Classic Reliance Bureau (CRBS)
-                </h2>
-                <div class="section-four-content-desc__open-button">Open</div>
-              </div>
-              <div class="section-four-content__mobile">
-                <div class="section-four-content__mobile__docs-wrapper">
-                  <div class="section-four-content__mobile__docs section-four-content__mobile__docs--cert">
-                    <div class="mobile-cert__img"></div>
-                    <div class="mobile-cert__container">
-                      <div class="mobile-cert__overlay"></div>
-                      <div class="button mobile-cert__button">Open</div>
-                      <div class="section-four-content__mobile__docs--circle cert">
-                        <i class="ion-android-open"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="section-four-content__mobile__docs section-four-content__mobile__docs--doc">
-                    <div class="mobile-doc__img"></div>
-                    <div class="mobile-doc__container">
-                      <div class="mobile-doc__overlay"></div>
-                      <div class="section-four-content__mobile__docs--circle doc">
-                        <i class="ion-android-open"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="section-four-content__preview">
-                <div class="section-four-content-preview__bg">
-                  <div class="section-four-content-preview__bg__overlay"></div>
-                  <div class="section-four-content-preview__bg__circle"></div>
-                </div>
-                <div class="section-four-content-preview__area">
-                  <div class="section-four-content-preview__area__img"></div>
-                  <a href="https://google.com"  target="_blank" class="section-four-content-preview__area__circle--click-target">
-                    <div class="section-four-content-preview__area__circle">
-                      <i class="ion-android-open"></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-four-content__forward-arrow">
-            <i class="ion-chevron-right"></i>
-          </div>
-          <div class="section-four-content__indicator">
-            <div class="section-four-content__indicator__active"></div>
-            <div class="section-four-content__indicator__inactive"></div>
-          </div>
-        </div>
-      </div>
-      <div class="section-five__map-container">
-        <div class="secton-five__map"></div>
-      </div>
-      <footer class="section-six">
-        <div class="section-six__content-wrapper">
-          <div class="section-six__content">
-            <a href="#" class="section-six__content--logo"></a>
-            <div class="section-six__content--links">
-              <a href="#" class="section-six__content--link">Privacy</a>
-              <a href="#" class="section-six__content--link">Terms</a>
-            </div>
-            <a href="" class="section-six__content--email-link">support@crbsweb.com</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    <crbsweb-app></crbsweb-app>
   </body>
-  <div style="height: 600px"></div>
 </html>

@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`crbsweb-nav`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="crbsweb-nav">
+  <template>
+    <style>
+      .nav-container { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; margin-top: 25px; }
+
+      .nav { width: 95vw; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+      .nav__logo { width: 50px; height: 50px; background: url("../images/crbs-logo.png"); background-size: contain; background-repeat: no-repeat; background-position: center center; border-radius: 100%; margin-right: auto; margin-left: 0; }
+
+      .link-container { display: -webkit-flex; display: -ms-flexbox; display: flex; }
+
+      .link-container__link { color: #a60402; margin: 0; text-decoration: none; text-transform: uppercase; font-weight: 700; margin-left: 75px; will-change: color; transition: color 200ms ease-in-out; }
+
+      .link-container__link:hover { color: #f4f5f9; }
+      .mobile-link-switch { display: none; }
+      
+      @media (max-width: 856px) { i.ion-navicon { height: 46px; margin-left: 25px; }
+        .nav { width: 90vw; }
+        .mobile-link-switch { display: -webkit-flex; display: -ms-flexbox; display: flex; color: #a60402; width: 50px; height: 50px; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; font-size: 40px; }
+        .link-container__link { display: none; }
+      }
+    </style>
+    <div class="nav-container">
+      <div class="nav">
+        <span class="nav__logo"></span>
+        <div class="nav__link-container link-container">
+          <a href="#" class="mobile-link-switch"><i class="ion-navicon"></i></a>
+          <a href="#" class="link-container__link">About</a>
+          <a href="#" class="link-container__link">Login</a>
+          <a href="#" class="link-container__link">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'crbsweb-nav',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'crbsweb-nav',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
