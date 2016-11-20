@@ -7,6 +7,7 @@
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../crbsweb-header/crbsweb-header.html">
+<link rel="import" href="../crbsweb-home-page/crbsweb-home-page.html">
 
 <dom-module id="crbsweb-app">
   <template>
@@ -22,6 +23,18 @@
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
     <crbsweb-header></crbsweb-header>
+    <iron-pages id="pages"
+        role="main"
+        selected="[[routeData.page]]"
+        selected-attribute="active"
+        attr-for-selected="name"
+        fallback-selection="home">
+      <crbsweb-home-page name="home"></crbsweb-home-page>
+      <crbsweb-about-page name="about"
+          subroute="[[subroute]]"></crbsweb-about-page>
+      <crbsweb-services-page name="services"
+          subroute="[[subroute]]"></crbsweb-services-page>
+    </iron-pages>
   </template>
 
   <script>
