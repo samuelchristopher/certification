@@ -22,22 +22,74 @@
 
       .link-container__link:hover { color: #f4f5f9; }
       .mobile-link-switch { display: none; }
-      
+
       @media (max-width: 856px) { i.ion-navicon { height: 46px; margin-left: 25px; }
         .nav { width: 90vw; }
         .mobile-link-switch { display: -webkit-flex; display: -ms-flexbox; display: flex; color: #a60402; width: 50px; height: 50px; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; font-size: 40px; }
-        .link-container__link { display: none; }
+        .link-container { display: none; }
+      }
+      body {
+        position: relative;
+      }
+      .mobile-nav-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #f13f4b;
+        z-index: 5;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        pointer-events: none;
+        will-change: opacity;
+        transition: all 200ms ease-in-out;
+      }
+
+      .mobile-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .link-container__link--mobiles {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        margin: 20px;
+        text-transform: uppercase;
+      }
+
+      .mobile-link-switch {
+        z-index: 6;
+      }
+
+      .mobile-nav-container.active {
+        /*display: flex;*/
+        opacity: 1;
+        pointer-events: all;
       }
     </style>
     <div class="nav-container">
       <div class="nav">
-        <span class="nav__logo"></span>
+        <a href="/" class="nav__logo"></a>
+        <a href="#" class="mobile-link-switch" on-tap="handleTap"><i class="ion-navicon"></i></a>
         <div class="nav__link-container link-container">
-          <a href="#" class="mobile-link-switch"><i class="ion-navicon"></i></a>
-          <a href="#" class="link-container__link">About</a>
-          <a href="#" class="link-container__link">Login</a>
-          <a href="#" class="link-container__link">Sign Up</a>
+          <a href="/about" class="link-container__link">About</a>
+          <a href="http://crbsweb.com/login" class="link-container__link">Login</a>
+          <a href="http://crbsweb.com/register" class="link-container__link">Sign Up</a>
         </div>
+      </div>
+    </div>
+    <div class="mobile-nav-container">
+      <div class="mobile-links" on-tap="closeNav">
+        <a href="/about" class="link-container__link--mobiles">About</a>
+        <a href="http://crbsweb.com/login" class="link-container__link--mobiles">Login</a>
+        <a href="http://crbsweb.com/register" class="link-container__link--mobiles">Sign Up</a>
       </div>
     </div>
   </template>
@@ -53,6 +105,23 @@
           value: 'crbsweb-nav',
         },
       },
+
+      closeNav: function(e) {
+        var navContent = document.querySelector('.mobile-nav-container')
+        navContent.classList.remove('active')
+        var icon = document.querySelector('.mobile-link-switch').firstElementChild
+        icon.classList.remove('ion-android-close')
+        icon.classList.add('ion-navicon')
+
+      },
+
+      handleTap: function(e) {
+        var navContent = document.querySelector('.mobile-nav-container')
+        navContent.classList.toggle('active')
+        var icon = e.srcElement
+        icon.classList.toggle('ion-navicon')
+        icon.classList.toggle('ion-android-close')
+      }
 
     });
   </script>
