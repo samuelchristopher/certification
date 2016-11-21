@@ -1,0 +1,62 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`crbsweb-footer`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="crbsweb-footer">
+  <template>
+    <style>
+      .section-six { max-width: 100vw; height: 90px; background: #f13f4b; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+      .section-six__content-wrapper { width: 95%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; margin: 0 auto; }
+
+      .section-six__content { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+      .section-six__content--logo { width: 50px; height: 50px; background-image: url("../images/crbs-logo.png"); background-size: cover; }
+
+      .section-six__content--link { text-transform: uppercase; font-weight: 700; text-decoration: none; color: #a60402; margin-left: 20px; }
+
+      .section-six__content--email-link { color: white; text-decoration: none; font-weight: 700; margin-left: 40px; }
+      @media (max-width: 436px) { .section-six { padding: 20px; }
+        .section-six__content { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+        .section-six__content--email-link { margin: 0 auto; }
+        .section-six__content--links { margin: 10px 0; }
+        .section-six__content--link { margin: 20px; } }
+
+      @media (max-width: 856px) { .section-six__content { width: 100%; }
+        .section-six__content--email-link { margin-left: auto; } }
+
+    </style>
+    <footer class="section-six">
+      <div class="section-six__content-wrapper">
+        <div class="section-six__content">
+          <a href="#" class="section-six__content--logo"></a>
+          <div class="section-six__content--links">
+            <a href="#" class="section-six__content--link">Privacy</a>
+            <a href="#" class="section-six__content--link">Terms</a>
+          </div>
+          <a href="" class="section-six__content--email-link">support@crbsweb.com</a>
+        </div>
+      </div>
+    </footer>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'crbsweb-footer',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'crbsweb-footer',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
