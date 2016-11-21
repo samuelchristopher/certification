@@ -9,6 +9,7 @@
 <link rel="import" href="../crbsweb-header/crbsweb-header.html">
 <link rel="import" href="../crbsweb-home-page/crbsweb-home-page.html">
 <link rel="import" href="../crbsweb-footer/crbsweb-footer.html">
+<link rel="import" href="../crbsweb-privacy-page/crbsweb-privacy-page.html">
 
 
 <dom-module id="crbsweb-app">
@@ -34,11 +35,13 @@
       <crbsweb-home-page name="home"></crbsweb-home-page>
       <crbsweb-about-page name="about"
           subroute="[[subroute]]"></crbsweb-about-page>
+      <crbsweb-privacy-page name="privacy"
+          subroute="[[subroute]]"></crbsweb-privacy-page>
       <crbsweb-services-page name="services"
           subroute="[[subroute]]"></crbsweb-services-page>
     </iron-pages>
     <crbsweb-footer></crbsweb-footer>
-    
+
   </template>
 
   <script>
