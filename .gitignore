@@ -28,6 +28,7 @@ logs
 *.log
 npm-debug.log*
 
+prepros.cfg
 # Runtime data
 pids
 *.pid
@@ -75,4 +76,3 @@ jspm_packages
 
 ### Polymer ###
 #Installed components via bower
-bower_components/

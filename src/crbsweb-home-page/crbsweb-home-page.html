@@ -1,0 +1,163 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../crbsweb-preview/crbsweb-preview.html">
+<link rel="import" href="../crbsweb-map/crbsweb-map.html">
+
+<!--
+`crbsweb-home-page`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="crbsweb-home-page">
+  <template>
+    <style>
+      .section-two { margin-top: 100px; width: 100%; margin-bottom: 100px; }
+
+      .section-two-content__heading { text-align: center; color: #252c3f; margin: 0 0 85px 0; }
+
+      .section-two-content__heading__span { color: #f13f4b; }
+
+      .section-two-content__categories { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+      .section-two-content__view-more-button, .section-four-content-desc__open-button { text-align: center; background: #f13f4b !important; color: white; margin-top: 60px; }
+
+      .card { width: 270px; height: 270px; background: white; color: #b0b0b0; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; overflow: hidden; margin: 20px; }
+
+      .card__text { padding: 30px 10px 0 10px; margin-bottom: 25px; }
+
+      .card__heading { text-transform: uppercase; font-weight: 700; color: #252c3f; margin-bottom: 15px; }
+
+      .card__description--small { font-size: 14px; }
+
+      .card__description--small--extra { font-size: 14px; margin-bottom: 38px; }
+
+      .card__image { width: 100%; height: 100%; }
+
+      .card__image--one { background-image: url("../images/maritime.png"); background-size: contain; }
+
+      .card__image--two { background-image: url("../images/oil-gas.png"); background-size: contain; }
+
+      .card__image--three { background-image: url("../images/business.png"); background-size: contain; }
+
+      .card__image--four { background-image: url("../images/energy.png"); background-size: contain; }
+
+      .button-wrap-center { display: -webkit-flex; display: -ms-flexbox; display: flex; width: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+      .section-three { margin-top: 80px; width: 100vw; background: #f4f5f9; padding-top: 11px; height: 615px; }
+
+      .section-three__heading { color: #252c3f; text-align: center; }
+
+      .section-three__content-wrapper { display: block; margin: 0 auto; max-width: 80vw; }
+
+      .section-three-content { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+      .section-three-content__image { width: 50%; height: 430px; background-image: url("../images/sou-quality-manual.png"); background-size: contain; background-repeat: no-repeat; background-position: center center; }
+
+      .section-three-content__desc { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; color: #f13f4b; font-weight: 700; text-align: center; width: 50%; }
+      body { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+      .container { width: 104vw; }
+
+      .mobile-link-switch { display: none; }
+
+      .section-one-content__heading--mobile { display: none; }
+
+      @media (max-width: 856px) { i.ion-navicon { height: 46px; margin-left: 25px; }
+        .nav { width: 90vw; }
+        .mobile-link-switch { display: -webkit-flex; display: -ms-flexbox; display: flex; color: #a60402; width: 50px; height: 50px; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; font-size: 40px; }
+        .link-container__link { display: none; }
+        .section-one-content { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+        .section-one-content__sub { display: none; }
+        .section-one-content__heading { display: none; }
+        .section-one-content__heading--mobile { display: block; color: #f4f5f9; }
+        .section-one-content__text { max-width: 100%; text-align: center; }
+        .section-one__content-container { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+        .logos { width: 150px; height: 200px; margin: 0; display: block; text-align: center; margin: 45px auto 0 auto; }
+        .brit__one { width: 150px; height: 150px; }
+        .brit__one__img { -webkit-transform: translate(4px, 1px); -ms-transform: translate(4px, 1px); transform: translate(4px, 1px); width: 101%; height: 99%; }
+        .brit__two { display: none; }
+        .brit__three { display: none; } }
+
+      @media (max-width: 856px) { .section-two { margin-top: 50px; }
+        .section-two-content__heading { max-width: 94vw; margin-left: auto; margin-right: auto; margin-bottom: 35px; } }
+
+      @media (max-width: 856px) { .section-three { height: 500px; }
+        .section-three-content__image { width: 100%; height: 250px; }
+        .section-three-content__desc { font-size: .7em; width: 100%; } }
+
+      .button, .section-four-content-desc__open-button { text-transform: uppercase; font-weight: 700; padding: 5px 15px; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; background: white; font-size: 1.5em; cursor: pointer; }
+
+    </style>
+    <div class="container">
+      <div class="section-two">
+        <div class="section-two__content section-two-content">
+          <h1 class="section-two-content__heading">We are <br><span class="section-two-content__heading__span">Classic Reliance Bureau</span></h1>
+          <div class="section-two-content__wrapper">
+            <div class="section-two-content__categories categories">
+              <div class="card categories__one">
+                <div class="card__text">
+                  <div class="card__heading">Maritime</div>
+                  <div class="card__description">We help manage risk and ensure availability of vessels and units in both the shipping and offshore sectors</div>
+                </div>
+                <div class="card__image card__image--one"></div>
+              </div>
+              <div class="card categories__two">
+                <div class="card__text">
+                  <div class="card__heading">Oil and Gas</div>
+                  <div class="card__description--small--extra">We enable safe, reliable and enhanced performance by providing integrated assurance and advisory services and offshore classification</div>
+                </div>
+                <div class="card__image card__image--two"></div>
+              </div>
+              <div class="card categories__three">
+                <div class="card__text">
+                  <div class="card__heading">Business Assurance</div>
+                  <div class="card__description--small">We provide certification, assessment and verification services - helping companies in a variety of industries assure sustainable business performance</div>
+                </div>
+                <div class="card__image card__image--three"></div>
+              </div>
+              <div class="card categories__four">
+                <div class="card__text">
+                  <div class="card__heading">Energy</div>
+                  <div class="card__description">We support our customers across the energy value chain in ensuring reliable, efficient and sustainable energy</div>
+                </div>
+                <div class="card__image card__image--four"></div>
+              </div>
+            </div>
+          </div>
+          <div class="button-wrap-center">
+            <a class="button section-one-content__sign-up-button section-two-content__view-more-button" href="http://crbsweb.com/company/services" style="text-decoration: none;">View More</a>
+          </div>
+      </div>
+    </div>
+    <div class="section-three">
+      <h1 class="section-three__heading">Quality Manual</h1>
+      <div class="section-three__content-wrapper">
+        <div class="section-three-content">
+          <div class="section-three-content__image"></div>
+          <div class="section-three-content__desc">
+            <h2>Our refined manual ensures <br> great quality for <br> our consumers</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <crbsweb-preview></crbsweb-preview>
+    <crbsweb-map></crbsweb-map>
+  </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'crbsweb-home-page',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'crbsweb-home-page',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

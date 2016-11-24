@@ -1,0 +1,90 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`crbsweb-about-page`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="crbsweb-about-page">
+  <template>
+    <style>
+      .section-two { margin-top: 100px; width: 100%; margin-bottom: 100px; }
+
+      .section-two-content__heading { text-align: center; color: #252c3f; margin: 0 0 85px 0; }
+
+      .section-two-content__heading__span { color: #f13f4b; }
+
+      .section-two-content__categories { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+      .section-two-content__view-more-button, .section-four-content-desc__open-button { text-align: center; background: #f13f4b !important; color: white; margin-top: 60px; }
+
+      .card { width: 270px; height: 270px; background: white; color: #b0b0b0; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; overflow: hidden; margin: 20px; }
+
+      .card__text { padding: 30px 10px 0 10px; margin-bottom: 25px; }
+
+      .card__heading { text-transform: uppercase; font-weight: 700; color: #252c3f; margin-bottom: 15px; }
+
+      .card__description--small { font-size: 14px; }
+
+      .card__description--small--extra { font-size: 14px; margin-bottom: 38px; }
+
+      .card__image { width: 100%; height: 100%; }
+
+      .card__image--one { background-image: url("../images/maritime.png"); background-size: contain; }
+
+      .card__image--two { background-image: url("../images/oil-gas.png"); background-size: contain; }
+
+      .card__image--three { background-image: url("../images/business.png"); background-size: contain; }
+
+      .card__image--four { background-image: url("../images/energy.png"); background-size: contain; }
+
+      .button-wrap-center { display: -webkit-flex; display: -ms-flexbox; display: flex; width: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+      .section-two {
+        color: #252c3f;
+        margin-bottom: 50px;
+      }
+
+      section {
+        max-width: 90vw;
+        margin: 0 auto;
+        display: block;
+        margin-top: 50px;
+      }
+
+      h3 {
+        color: #f13f4b;
+      }
+      @media (max-width: 856px) { .section-two { margin-top: 50px; }
+        .section-two-content__heading { max-width: 94vw; margin-left: auto; margin-right: auto; margin-bottom: 35px; } }
+    </style>
+      <div class="section-two">
+        <div class="section-two__content section-two-content">
+          <h1 class="section-two-content__heading">About <br><span class="section-two-content__heading__span">Classic Reliance Bureau</span></h1>
+          <div class="section-two-content__wrapper">
+            <section>
+              We at CRBS are proud to be ones who are constantly innovating for the betterment of our clients. Our web application at crbsweb.com
+              is part of this never ending innovation journey. We created this web application to allow our clients to partake in mainly seamless
+              online certification, however we have included so much more! Come and join us, the modern source certification, Classic Reliance Bureau.
+            </section>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'crbsweb-about-page',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'crbsweb-about-page',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
