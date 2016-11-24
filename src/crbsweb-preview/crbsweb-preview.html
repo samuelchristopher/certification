@@ -97,10 +97,14 @@
       .section-two-content__view-more-button, .section-four-content-desc__open-button { text-align: center; background: #f13f4b !important; color: white; margin-top: 60px; }
 
     .ion-chevron-right {
+      -webkit-transition: -webkit-transform 200ms ease-in-out;
+      transition: -webkit-transform 200ms ease-in-out;
       transition: transform 200ms ease-in-out;
+      transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
       will-change: transform;
     }
     .ion-chevron-right.clicked {
+      -webkit-transform: rotate(180deg);
       transform: rotate(180deg);
     }
 
@@ -159,10 +163,10 @@
         <div class="section-four-content__forward-arrow">
           <i class="ion-chevron-right" on-tap="showCert"></i>
         </div>
-        <div class="section-four-content__indicator">
+        <!-- <div class="section-four-content__indicator">
           <div class="section-four-content__indicator__active"></div>
           <div class="section-four-content__indicator__inactive"></div>
-        </div>
+        </div> -->
       </div>
     </div>
 
