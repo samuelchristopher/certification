@@ -1,0 +1,100 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../crbsweb-nav/crbsweb-nav.html">
+
+<!--
+`crbsweb-header`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="crbsweb-header">
+  <template>
+    <style>
+      /*:host {
+        display: block;
+      }*/
+
+
+      .section-one__bg { width: 125vw; height: 540px; background-color: #f13f4b; position: absolute; z-index: -1; top: -200px; left: -40px; -webkit-transform: rotateZ(-6deg); -ms-transform: rotate(-6deg); transform: rotateZ(-6deg); }
+
+      .section-one__content-container { max-width: 63vw; margin: 0 auto 0 auto; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+
+      .section-one-content__text { max-width: 52.5%; }
+
+      .section-one-content__heading { color: #f4f5f9; margin-bottom: 30px; }
+
+      .section-one-content__sub { color: #a60402; font-weight: 700; margin: 0 0 50px 0; font-size: 20px; }
+
+      .section-one-content__logos { margin-left: auto; margin-top: 25px; position: relative; }
+
+      .section-one-content__sign-up-button, .section-four-content-desc__open-button, .mobile-cert__button { will-change: transform, box-shadow; transition: all 200ms ease-in-out; }
+
+      .section-one-content__sign-up-button:hover, .section-four-content-desc__open-button:hover, .mobile-cert__button:hover { -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); box-shadow: 0px 7px 10px -5px rgba(0, 0, 0, 0.3); }
+
+      .logos__brit { width: 200px; height: 200px; background-color: white; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); margin: 0; border-radius: 10px; position: absolute; right: 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
+
+      .brit__one { z-index: 3; }
+
+      .brit__one__img { background: url("../images/brit-logo.jpg"); width: 89%; height: 89%; background-size: cover; background-repeat: no-repeat; background-position: -21px -5px; -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
+
+      .brit__two { z-index: 2; -webkit-transform: translate(-25px, 25px); -ms-transform: translate(-25px, 25px); transform: translate(-25px, 25px); }
+
+      .brit__two__img { background: url("../images/brit-logo.jpg"); width: 89%; height: 89%; background-size: cover; background-repeat: no-repeat; background-position: -21px -5px; -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
+
+      .brit__three { z-index: 1; -webkit-transform: translate(-50px, 50px); -ms-transform: translate(-50px, 50px); transform: translate(-50px, 50px); }
+
+      .brit__three__img { background: url("../images/brit-logo.jpg"); width: 89%; height: 89%; background-size: cover; background-repeat: no-repeat; background-position: -21px -5px; -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
+
+
+
+      .section-one-content__heading--mobile { display: none; }
+
+      @media (max-width: 856px) {
+        .section-one-content { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+        .section-one-content__sub { display: none; }
+        .section-one-content__heading { display: none; }
+        .section-one-content__heading--mobile { display: block; color: #f4f5f9; }
+        .section-one-content__text { max-width: 100%; text-align: center; }
+        .section-one__content-container { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+        .logos { width: 150px; height: 200px; margin: 0; display: block; text-align: center; margin: 45px auto 0 auto; }
+        .brit__one { width: 150px; height: 150px; }
+        .brit__one__img { -webkit-transform: translate(4px, 1px); -ms-transform: translate(4px, 1px); transform: translate(4px, 1px); width: 101%; height: 99%; }
+        .brit__two { display: none; }
+        .brit__three { display: none; } }
+        .button, .section-four-content-desc__open-button { text-transform: uppercase; font-weight: 700; padding: 5px 15px; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; box-shadow: 0px 9px 16px 0px rgba(0, 0, 0, 0.15); border-radius: 10px; background: white; font-size: 1.5em; cursor: pointer; }
+    </style>
+    <div class="section-one">
+      <div class="section-one__bg"></div>
+      <crbsweb-nav></crbsweb-nav>
+      <div class="section-one__content-container section-one-content">
+        <div class="section-one-content__text">
+          <h1 class="section-one-content__heading--mobile">Get certified <br> by the certified</h1>
+          <h1 class="section-one-content__heading">Classic Reliance Bureau<br> has been certified to provide <br> certification</h1>
+          <div class="section-one-content__sub">Get certified today</div>
+          <a href="http://crbsweb.com/register" style="text-decoration:none; color: #252c3f;" class="button section-one-content__sign-up-button">Sign Up</a>
+        </div>
+        <div class="section-one-content__logos logos">
+          <div class="logos__brit brit__one"><div class="brit__one__img"></div></div>
+          <div class="logos__brit brit__two"><div class="brit__two__img"></div></div>
+          <div class="logos__brit brit__three"><div class="brit__three__img"></div></div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'crbsweb-header',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'crbsweb-header',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

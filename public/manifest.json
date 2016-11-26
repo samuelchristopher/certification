@@ -1,0 +1,6 @@
+{
+  "name": "crbsweb",
+  "short_name": "crbsweb",
+  "start_url": "/",
+  "display": "standalone"
+}

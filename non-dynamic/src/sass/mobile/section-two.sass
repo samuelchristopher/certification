@@ -1,9 +1,72 @@
+// TO DO: Menu function and animation brit logos
+.mobile-link-switch
+  display: none
+.section-one-content
+  +e('heading')
+    +m('mobile')
+      display: none
 @media (max-width: 856px)
-  .section-two
-    margin-top: 50px  
-  .section-two-content
+  i.ion-navicon
+    height: 46px
+    margin-left: 25px
+  .nav
+    width: 90vw
+  .mobile-link-switch
+    display: flex
+    color: $dark-red
+    width: 50px
+    height: 50px
+    justify-content: center
+    align-items: center
+    // padding-top: 50px
+    font-size: 40px
+
+  .link-container
+    +e('link')
+      display: none
+
+  .section-one-content
+    display: flex
+    align-items: center
+    +e('sub')
+      display: none
     +e('heading')
-      max-width: 94vw
-      margin-left: auto
-      margin-right: auto
-      margin-bottom: 35px
+      display: none
+      +m('mobile')
+        @extend section-one-content__heading !optional
+        display: block
+        color: $light-grey
+    +e('text')
+      max-width: 100%
+      text-align: center
+
+  .section-one__content-container
+    flex-direction: column
+
+  .logos
+    width: 150px
+    height: 200px
+    margin: 0
+    display: block
+    text-align: center
+    margin: 45px auto 0 auto
+    // display: flex
+    // justify-content: center
+    // align-items: center
+
+  .brit
+    +e('one')
+      width: 150px
+      height: 150px
+      // display: block
+      // margin: 0 auto
+
+
+      +e('img')
+        transform: translate(4px, 1px)
+        width: 101%
+        height: 99%
+    +e('two')
+      display: none
+    +e('three')
+      display: none
