@@ -1,4 +1,4 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../../bower_components/app-route/app-location.html">
@@ -14,7 +14,7 @@
 <link rel="import" href="../crbsweb-about-page/crbsweb-about-page.html">
 
 
-<dom-module id="crbsweb-app">
+</head><body><dom-module id="crbsweb-app">
   <template>
     <style>
         h2 {
@@ -22,44 +22,19 @@
         }
     </style>
     <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
     <crbsweb-header></crbsweb-header>
-    <iron-pages id="pages"
-        role="main"
-        selected="[[routeData.page]]"
-        selected-attribute="active"
-        attr-for-selected="name"
-        fallback-selection="home">
+    <iron-pages id="pages" role="main" selected="[[routeData.page]]" selected-attribute="active" attr-for-selected="name" fallback-selection="home">
       <crbsweb-home-page name="home"></crbsweb-home-page>
-      <crbsweb-about-page name="about"
-          subroute="[[subroute]]"></crbsweb-about-page>
-      <crbsweb-privacy-page name="privacy"
-          subroute="[[subroute]]"></crbsweb-privacy-page>
-      <crbsweb-terms-page name="terms"
-          subroute="[[subroute]]"></crbsweb-terms-page>
-      <crbsweb-services-page name="services"
-          subroute="[[subroute]]"></crbsweb-services-page>
+      <crbsweb-about-page name="about" subroute="[[subroute]]"></crbsweb-about-page>
+      <crbsweb-privacy-page name="privacy" subroute="[[subroute]]"></crbsweb-privacy-page>
+      <crbsweb-terms-page name="terms" subroute="[[subroute]]"></crbsweb-terms-page>
+      <crbsweb-services-page name="services" subroute="[[subroute]]"></crbsweb-services-page>
     </iron-pages>
     <crbsweb-footer></crbsweb-footer>
 
   </template>
 
-  <script>
-    Polymer({
-
-      is: 'crbsweb-app',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'crbsweb-app',
-        },
-      },
-
-    });
-  </script>
+  <script>Polymer({is:"crbsweb-app",properties:{prop1:{type:String,value:"crbsweb-app"}}});</script>
 </dom-module>
+</body></html>

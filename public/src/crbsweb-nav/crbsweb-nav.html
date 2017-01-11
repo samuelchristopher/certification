@@ -1,13 +1,8 @@
-<link rel="import" href="../../polymer/polymer.html">
-
-<!--
-`crbsweb-nav`
+<html><head><link rel="import" href="../polymer/polymer.html">
 
 
-@demo demo/index.html
--->
 
-<dom-module id="crbsweb-nav">
+</head><body><dom-module id="crbsweb-nav">
   <template>
     <style>
       .nav-container { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; margin-top: 25px; }
@@ -94,35 +89,6 @@
     </div>
   </template>
 
-  <script>
-    Polymer({
-
-      is: 'crbsweb-nav',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'crbsweb-nav',
-        },
-      },
-
-      closeNav: function(e) {
-        var navContent = document.querySelector('.mobile-nav-container')
-        navContent.classList.remove('active')
-        var icon = document.querySelector('.mobile-link-switch').firstElementChild
-        icon.classList.remove('ion-android-close')
-        icon.classList.add('ion-navicon')
-
-      },
-
-      handleTap: function(e) {
-        var navContent = document.querySelector('.mobile-nav-container')
-        navContent.classList.toggle('active')
-        var icon = e.srcElement
-        icon.classList.toggle('ion-navicon')
-        icon.classList.toggle('ion-android-close')
-      }
-
-    });
-  </script>
+  <script>Polymer({is:"crbsweb-nav",properties:{prop1:{type:String,value:"crbsweb-nav"}},closeNav:function(e){var o=document.querySelector(".mobile-nav-container");o.classList.remove("active");var i=document.querySelector(".mobile-link-switch").firstElementChild;i.classList.remove("ion-android-close"),i.classList.add("ion-navicon")},handleTap:function(e){var o=document.querySelector(".mobile-nav-container");o.classList.toggle("active");var i=e.srcElement;i.classList.toggle("ion-navicon"),i.classList.toggle("ion-android-close")}});</script>
 </dom-module>
+</body></html>
