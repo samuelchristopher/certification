@@ -114,7 +114,7 @@
               <h2 class="section-four-content-desc__text">
                 This is an example of the comprehnsive and extensive documentation <br> we provide here in <br> Classic Reliance Bureau (CRBS)
               </h2>
-              <div class="section-four-content-desc__open-button">Open</div>
+              <a class="section-four-content-desc__open-button" href="https://drive.google.com/open?id=0B0dJ3D8Pgt2hMXRXdEdQZGVydTA" target="_blank">Open</a>
             </div>
             <div class="section-four-content__mobile">
               <div class="section-four-content__mobile__docs-wrapper">
@@ -164,6 +164,40 @@
 
   </template>
 
-  <script>Polymer({is:"crbsweb-preview",properties:{prop1:{type:String,value:"crbsweb-preview"}},showCert:function(e){e.target.classList.toggle("clicked");var t=document.querySelector(".preview-to-affect");t.classList.toggle("section-four-content-preview__area__img--doc"),t.classList.toggle("section-four-content-preview__area__img--cert");var i=document.querySelector(".section-four-content__indicator");console.log(i.children[1].classList[0]),t.classList.contains("section-four-content-preview__area__img--cert")?(t.nextSibling.nextSibling.href="https://drive.google.com/open?id=0B0dJ3D8Pgt2hMFFYR2tab2NKTDg",i.children[1].classList[0]="section-four-content__indicator__inactive",i.children[0].classList[0]=".section-four-content__indicator__active"):t.classList.contains("section-four-content-preview__area__img--doc")&&(t.nextSibling.nextSibling.href="https://drive.google.com/open?id=0B0dJ3D8Pgt2hMXRXdEdQZGVydTA",i.children[0].classList.remove(".section-four-content__indicator__inactive"),i.children[0].classList.add(".section-four-content__indicator__active"),i.children[1].classList.remove(".section-four-content__indicator__active"),i.children[1].classList.add(".section-four-content__indicator__inactive"))}});</script>
+  <script>
+    Polymer({
+
+      is: 'crbsweb-preview',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'crbsweb-preview',
+        },
+      },
+      showCert: function(e) {
+        // get btn, img, arrow
+        let btn = document.querySelector('.section-four-content-desc__open-button')
+        let img = document.querySelector('.preview-to-affect')
+        let openLink = document.querySelector('.section-four-content-preview__area__circle--click-target')
+        // swap values
+        e.target.classList.toggle('clicked')
+        img.classList.toggle('section-four-content-preview__area__img--doc')
+        img.classList.toggle('section-four-content-preview__area__img--cert')
+        // if arrow has clicked class then show cert link
+        if (e.target.classList.contains('clicked')) {
+          console.log('show cert')
+          btn.href = "https://drive.google.com/open?id=0B0dJ3D8Pgt2hMFFYR2tab2NKTDg"
+          openLink.href = "https://drive.google.com/open?id=0B0dJ3D8Pgt2hMFFYR2tab2NKTDg"
+        } else {
+          console.log('show doc')
+          btn.href = "https://drive.google.com/open?id=0B0dJ3D8Pgt2hMXRXdEdQZGVydTA"
+          openLink.href = "https://drive.google.com/open?id=0B0dJ3D8Pgt2hMXRXdEdQZGVydTA"
+        }
+
+      }
+
+    });
+  </script>
 </dom-module>
 </body></html>
